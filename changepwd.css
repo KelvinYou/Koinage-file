@@ -1,0 +1,115 @@
+* {padding:0px;margin:0px}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.language {
+    background-color:rgb(38, 104, 36);
+    text-align:right;
+    color:white;
+    padding:4px;
+}
+.language h5 {
+    margin-right: 100px;
+}
+.second {
+    background-color:rgb(53, 172, 59);
+    display:grid;
+    grid-template-columns: 30% 50% 20%;
+}
+.second div img {
+    width:325px;
+    position: relative;
+    left:9%;
+    padding:auto;
+}
+.ss2,.ss1 {
+    text-decoration-line: none;
+    float:right;
+    color: white;
+    display: block;
+    text-align:center;
+    padding: 8px;
+    margin-top:45px;
+    margin-bottom: 5px;
+}
+.ss1 {
+    border-radius:30px;
+    width:80px;
+    border: 1px;
+    border-color: #f1f1f1;
+    border:1px solid white;
+    margin-right:20px;
+}
+.ss2 {
+    margin-right:70px;
+}
+#container1 {
+    background-color:rgb(106, 211, 106);
+    padding:26px;
+}
+
+#container2 {
+    background-color:white;
+    width:300px;
+    height: 430px;
+    border-radius:26px;
+    margin:auto;
+    text-align: center;
+    padding:auto;
+}
+#container2 img {
+    width:170px;
+    margin-top:20px;
+    margin-bottom:5px;
+}
+.inpp {
+    border:none;
+    padding:6px;
+    border-bottom:solid 1px grey;
+    border-radius:10px;
+}
+.inpp:hover {
+    border-color:black;
+}
+.changebtn,.cancelbtn {
+    width:170px;
+    padding:4px;
+    border-radius:8px;
+}
+.changebtn {
+    border-color:rgb(205, 255, 198);
+    background-color:rgb(205, 255, 198);
+}
+.changebtn:hover {
+    border-color:rgb(109, 255, 89);
+    background-color:rgb(109, 255, 89);
+    font-size: 16px;
+    width:185px;
+}
+.cancelbtn {
+    border-color:rgb(255, 198, 198);
+    background-color:rgb(255, 198, 198);
+}
+.cancelbtn:hover {
+    border-color:rgb(255, 89, 89);
+    background-color:rgb(255, 89, 89);
+    font-size: 16px;
+    width:185px;
+}
+.end {
+    background-color:rgb(53, 172, 59);
+    text-align: center;
+}
+.end img {
+    width:325px;
+    margin-top:90px;
+}
+.end2 {
+    background-color:rgb(38, 104, 36);
+    color:white;
+    margin-bottom:10px;
+}
+.end2 h5 {
+    margin-left:30px;
+    padding-top:16px;
+    padding-bottom:16px;
+}

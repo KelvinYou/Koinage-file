@@ -1,0 +1,446 @@
+* {padding:0px;margin:0px}
+body {font-family: Arial, Helvetica, sans-serif;}
+.inputt {
+    display: inline-block;
+    width:97%;
+    padding:8px;
+}
+button:hover {
+    opacity:1;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+    float: left;
+    width:35%;
+    margin-left:10%;
+    margin-top:15px;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+  
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+  
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+.modal img {
+    margin-left:37%;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+  
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+   
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+  
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.language {
+    background-color:rgb(38, 104, 36);
+    text-align:right;
+    color:white;
+    padding:4px;
+}
+.language h5 {
+    margin-right: 100px;
+}
+.second {
+    background-color:rgb(53, 172, 59);
+    display:grid;
+    grid-template-columns: 30% 50% 20%;
+}
+.second div img {
+    width:325px;
+    position: relative;
+    left:9%;
+    padding:auto;
+}
+.ss2,.ss1 {
+    text-decoration-line: none;
+    float:right;
+    color: white;
+    display: block;
+    text-align:center;
+    padding: 8px;
+    margin-top:45px;
+    margin-bottom: 5px;
+}
+.ss1 {
+    border-radius:30px;
+    width:80px;
+    border: 1px;
+    border-color: #f1f1f1;
+    border:1px solid white;
+    margin-right:20px;
+}
+.ss2 {
+    margin-right:70px;
+}
+.coin {
+    margin-top:50px;
+}
+
+.coi1 {
+    position: absolute;
+    display: inline-block;
+    margin-left:5%;
+}
+.addds {
+    width:200px;
+    height:65px;
+    border:none;
+    background-color:white;
+    font-size: 30px;
+    color:rgb(28, 46, 28)
+}
+.droc {
+    display: none;
+    position: absolute;
+    width:150px;
+    border-radius:20px;
+}
+.coi1:hover .droc {
+    display: block;
+}
+.coi1 button {
+    border:none solid black;
+    font-size: 20px;
+    background-color:white;
+}
+.coi2 {
+    margin-left:60%;
+    position: absolute;
+    display: inline-block;
+}
+.droc2 {
+    display: none;
+    position: absolute;
+    width:150px;
+    border-radius:5px;
+    border:solid 1px;
+    margin-left:-200px;
+    width:300px;
+    background-color:rgb(184, 184, 184);
+}
+.coi2:hover .droc2 {
+    display:block;
+}
+.coi3 {
+    margin-left:80%;
+}
+.symbols {
+    width:43px;
+}
+.lol {
+    text-decoration-line: none;
+    color:black;
+    font-size: 30px;
+    margin-left:30px;
+    background-color: white;
+    border:none;
+}
+.api,.settings {
+    text-decoration-line: none;
+    font-size: 30px;
+    margin-right:30px;
+
+}
+.api {
+    color: rgb(53, 172, 59);
+    background-color:white;
+    border:none;
+}
+.apikeys1 {
+    width:50%;
+    margin:auto;
+    padding-top:50px;
+
+}
+.apikeys2 {
+    background-color: rgb(0, 46, 8);
+    padding:50px;
+    border-radius:30px;
+    color:rgb(255, 255, 255);
+}
+.apikeys3 {
+    color:#cccccc;
+    text-align:center;
+    margin-bottom:30px;
+    font-size:200%;
+}
+.apikeys4 {
+    display:grid;
+    grid-template-columns: 33% 67%;
+    border:4px solid rgb(61, 252, 204);
+    padding:30px;
+    border-radius:20px;
+    background-color:rgb(0, 128, 21);
+    margin-bottom:30px;
+    font-size:17px;
+    text-align: center;
+}
+.apikeys5 {
+    margin-right:30px;
+}
+.apikeys5 h3 ,.apikeys6 h3  {
+    border-bottom:solid 1px greenyellow;
+    margin-bottom:50px;
+}
+.apikeys5 p {
+    background-color:black;
+    border:solid black;
+    border-radius:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.apikeys6 p {
+    background-color:black;
+    border:solid black;
+    border-radius:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.apikeys7 p {
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.middle {
+    display:grid;
+    grid-template-columns: auto auto;
+    margin-top:180px;
+    font-size: 30px;
+    width:80%;
+    margin-left:16%;
+
+}
+.balance a img {
+    width:23px;
+    margin-right:30px;
+    margin-top:38px;
+    border: 1px solid rgb(88, 88, 88);
+    padding:15px;
+    border-radius:100%;
+}
+.addd {
+    border-radius:100%;
+    width:65px;
+    height:65px;
+    
+}
+.addd img {
+    width:40px;
+}
+
+.drop,.drop1,.drop2 {
+    position: absolute;
+    display: inline-block;
+    margin-top:30px;
+}
+.drop1 {
+    margin-left:110px;
+}
+.drop2 {
+    margin-left:220px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(152, 255, 169);
+    width:150px;
+    border-radius:20px;
+}
+.drop:hover .dropdown-content {
+    display: block;
+}
+.pending {
+    color:rgb(158, 158, 158);
+}
+.en1 {
+    margin-top:230px;
+}
+.end {
+    width:100%;
+    height:100px;
+    background-color:rgb(53, 172, 59);
+    margin-top:30px;
+}
+.endd {
+    background-color: rgb(38, 104, 36);
+    padding:20px;
+}
+.e1 {
+    float:left;
+    color: white;
+    margin-top:-10px;
+}
+.e2 {
+    float:right;
+    color: white;
+    margin-top:-10px;
+}
+.ee {
+    display:grid;
+    grid-template-columns: 70% 30%;
+}
+.frame2 {
+    background:rgb(255, 255, 255);
+    width:60%;
+    height:520px;
+    margin-left:20%;
+    border-radius:40px;
+
+
+}
+.frame3 {
+    padding-top:50px;
+}
+.frame4 {
+    text-align:center;
+    margin-top:10px;
+}
+.frame5 {
+    margin-bottom:24px;
+    margin-left:10%;
+    margin-right:10%;
+    border:1px solid;
+    border-radius:20px;
+}
+#barcode {
+    width:30%;
+    height:30%;
+    margin-left:35%;
+}
+.donebtn {
+    width:40%;
+    margin-top:15px;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+.container2 {
+    background-color:white;
+    margin-left:32%;
+    margin-right:32%;
+    height:390px;
+    border-radius:30px;
+}
+.con3 {
+    margin-left:3%;
+    margin-right:3%;
+    padding-top:40px;
+}
+.con3 h1{
+    text-align:center;
+}
+.inpp {
+    background-color:#cccccc;
+    border:none;
+    padding:8px;
+    width:70%;
+    border-radius:4px;
+    float:right;
+}
+.apikeys5 button:visited {
+    display:none;
+}
+.setting {
+    border:none;
+    background-color: white;
+    font-size:30px;
+}
+@media only screen and (max-width:800px) {
+    
+    .second {
+        background-color:rgb(53, 172, 59);
+        display:grid;
+        grid-template-columns: auto;
+    }
+    .ss2 {
+        font-size: 15px;
+    }
+    .middle {
+        display:grid;
+        grid-template-columns:auto auto;
+        margin-top:100px;
+        font-size:15px;
+        width:97%;
+        margin-left:3%;
+        margin-top:300px;
+    }
+    .pending {
+        margin-top:110px;
+    }
+    .coi1 {
+        margin-left:41%;
+        margin-top:0px;
+    }
+    .coi2 {
+        margin-left:20%;
+        margin-top:120px;
+    }
+    .droc2 {
+        display: none;
+        position: absolute;
+        width:150px;
+        border-radius:5px;
+        border:solid 1px;
+        margin-left:0px;
+        width:300px;
+    }
+    .pending {
+        margin-top:0px;
+    }
+    .addd {
+        height:50px;
+        width:50px;
+        border-radius: 2px;
+    }
+    .drop1 {
+        margin-left:15%;
+    }
+    .drop2 {
+        margin-left:30%;
+    }
+
+}

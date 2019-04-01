@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Koinage APIkey</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="fordy.css">
+</head>
+<body>
+    <div class="">
+        <div class="language">
+            <h5>Language:English | Mandarin</h5>
+        </div>
+
+        <div class="second">
+            <div>
+                <img src="logo.png" alt="Koinagewallet">
+            </div>
+            <div>
+                <a class="ss2" href="security.html">SECURITY</a>
+                <a class="ss2" href="support.html">SUPPORT</a>
+                <a class="ss2" href="fordevelopers.html">FOR DEVELOPERS</a>
+            </div>
+            <div>
+                <a class="ss1" href="http://koinage.cc">LOGOUT</a>
+                <a class="ss1" href="http://koinage.cc/dashboard.php">WALLET</a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="jumbotron text-center">
+  <h1>KOINAGE API DOCUMENTATION</h1>
+  <p>GENERAL GUIDE FOR COINAGE API</p> 
+</div>
+  
+<div class="container">
+  <div class="column">
+    <div class="col-sm-4">
+      
+      <h3>Create wallet</h3>
+      <p>Request method : get</p>
+      <p>Api key : http://1.32.63.61:8051/api/v1/wallet/CreateApiKey</p>
+      <p>Paramater :1) Type=Omni, LTC, BCH, ETH 2)Label= user email</p>
+      <p>example : http://1.32.63.61:8051/api/v1/wallet/CreateApiKey?type=LTC&label=test@test.com</p>
+      <pre>
+    {
+      "code": 0,
+      "data": { 
+                "address":"MNZmRiz1msadqwuqqLWLyz2trmHCGz6Rm",
+                "apiKey":"c34f69fadas9103cb4897fb6c6f9",
+                "network":"LTC",
+                "privKey":"TA3V3DadsEYHtE2GK7X2JEMc5YGmYQW7KCq1"
+              },
+      "status": "Success"
+    }
+      </pre>
+  </div>
+  <div class="col-sm-4">
+    <h3>Register account</h3>
+    <p>Request method : post</p>
+    <p>Api key : http://1.32.63.61:8491/api/v1/register</p>
+    <p>Paramater </p>
+    <p>nickname   昵称，2-16位 * 中文 \u4e00-\u9fA5 * 日文 \u0800-\u4e00 * 韩文 \uac00-\ud7ff</p>
+    <p>pwd  8~16 0-9a-zA-Z no special char</p>
+    <p>safe_pwd   8~16 0-9a-zA-Z no special char</p>
+    <p>email </p>
+    <p>emailCode 4 digit code which will receive by email</p>
+    <p>example : http://1.32.63.61:8491/api/v1/register?nickname=bro&pwd=June0612&safe_pwd=Card0912&email=test@test.com&emailCode=123456</p>
+    <p>Sample 1:
+      {
+        "code": 0,
+        "msg": "success",
+        "result": null
+    }
+    Sample 2:
+    {
+        "code": 40008,
+        "msg": "account existed",
+        "result": null
+    }
+    Sample 3:
+    {
+        "code": 40003,
+        "msg": "invalid password format",
+        "result": null
+    }Sample 4:
+    {
+        "code": 40004,
+        "msg": "invalid password format",
+        "result": null
+    }</p>
+  </div>
+  <div class="col-sm-4">
+      <h3>Login account</h3>
+      <p>Request method : post</p>
+      <p>Api key : http://1.32.63.61:8491/api/v1/login</p>
+      <p>Paramater </p>
+      <p>account :email for register</p>
+      <p>pwd  :password while register</p>
+      <p>example : 
+          http://1.32.63.61:8491/api/v1/login?account=qwwqe&pwd=123456789sa</p>
+      <p>Sample 1:
+        {
+          "code": 0,
+          "msg": "success",
+          "result": null
+      }
+      Sample 2:
+      {
+          "code": 40008,
+          "msg": "account existed",
+          "result": null
+      }
+      Sample 3:
+      {
+          "code": 40003,
+          "msg": "invalid password format",
+          "result": null
+      }Sample 4:
+      {
+          "code": 40004,
+          "msg": "invalid password format",
+          "result": null
+      }</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Withdraw</h3>
+      <p>Request method : get</p>
+      <p>Api key : http://1.32.63.61:8051/api/v1/wallet/Withdraw</p>
+      <p>Paramater </p>
+      <p>Params 1 = api_key (api_key is different for each currency and each client)</p>
+      <p>Params 2 = amounts (Numberic)</p>
+      <p>Params 3 = from_addresses (Varchar) the address u get from the create wallet api key </p>
+      <p>Params 4 = to_addresses (Varchar) </p>
+      <p>Params 5 = network (Exp: BTC/USDT/ETH/JE) </p>
+      <p>example : http://1.32.63.61:8051/api/v1/wallet/Withdraw?api_key=xxxxx&amounts=0.0001&from_addresses=161UAMjnnKkX43ouDCH1iqJH1wWgQWC5gk&to_addresses=161UAMjnnKkX43ouDCH1iqJH1wWgQWC5gk&network=BTC</p>
+      <p>Sample 1:
+        {
+          "code": 0,
+          "msg": "success",
+          "result": null
+      }
+      Sample 2:
+      {
+          "code": 40008,
+          "msg": "account existed",
+          "result": null
+      }
+      Sample 3:
+      {
+          "code": 40003,
+          "msg": "invalid password format",
+          "result": null
+      }Sample 4:
+      {
+          "code": 40004,
+          "msg": "invalid password format",
+          "result": null
+      }</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Wallet Summary</h3>
+      <p>Request method : post</p>
+      <p>Api key : http://1.32.63.61:8051/api/v1/wallet/summary</p>
+      <p>Paramater </p>
+      <p>Params 1 = api_key (Provided by Jonvi)(api_key is different for each currency and each client)</p>
+      <p>example : http://1.32.63.61:8051/api/v1/wallet/summary?api_key=672c85d4fc18d4b9920d3dadc7228237</p>
+      <p>Sample 1:
+        {
+          "timestamp": 1551947931062,
+          "status": 500,
+          "error": "Internal Server Error",
+          "message": "API_INVALID(40002)[Invalid API Key]",
+          "path": "/api/v1/wallet/summary"
+        }
+      Sample 2:
+      {
+        "code": 0,
+        "data": {
+            "hotwalletBalance": 0.5,
+            "pendingTransfer": 0,
+            "pendingWithdraw": 0,
+            "subAccountBalance": 0,
+            "totalBalance": 0.5,
+            "totalDeposit": 0.5,
+            "totalTransfered": 0,
+            "totalWithdraw": 0
+        },
+        "status": "Success"
+      }
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Update password</h3>
+      <p>Request method : post</p>
+      <p>Api key : http://1.32.63.61:8491/api/v1/account/updatePwd</p>
+      <p>Paramater </p>
+      <p>Params 1 = account (register email)</p>
+      <p>Params 2 = pwd 8~16 0-9a-zA-Z no special char</p>
+      <p>Params 3 = oldPwd 8~16 0-9a-zA-Z no special char </p>
+      <p>example :http://1.32.63.61:8491/api/v1/account/updatePwd?account=test1@test.com&pwd=qwer3322&oldPwd=qwer2222</p>
+      <p>Sample 1:
+        {
+          "code": 0,
+          "msg": "success",
+          "result": null
+        }
+      Sample 2:
+      {
+        "code": 400010,
+        "msg": "invalid password ",
+        "result": null
+      }
+      </p>
+    </div>
+    
+  <div class="col-sm-4">
+      <h3>Update Safe password</h3>
+      <p>Request method : post</p>
+      <p>Api key : http://1.32.63.61:8491/api/v1/account/updateSafePwd</p>
+      <p>Paramater </p>
+      <p>Params 1 = account (register email)</p>
+      <p>Params 2 = pwd 8~16 0-9a-zA-Z no special char</p>
+      <p>Params 3 = safe_pwd 8~16 0-9a-zA-Z no special char </p>
+      <p>example :http://1.32.63.61:8491/api/v1/account/updateSafePwd?account=test1@test.com&pwd=qwer2222&safe_pwd=june1234</p>
+      <p>Sample 1:
+        {
+          "code": 0,
+          "msg": "success",
+          "result": null
+        }
+      Sample 2:
+      {
+        "code": 400010,
+        "msg": "invalid password ",
+        "result": null
+      }
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+      <h3>Verify safe password for withdraw</h3>
+      <p>Request method : post</p>
+      <p>Api key : http://1.32.63.61:8491/api/v1/account/verifySafePwd</p>
+      <p>Paramater </p>
+      <p>Params 1 = account (register email)</p>
+      <p>Params 2 = safe_pwd 8~16 0-9a-zA-Z no special char</p>
+      <p>example :http://1.32.63.61:8491/api/v1/verifySafePwd?account=test1@test.com&safe_pwd=june1234</p>
+      <p>Sample 1:
+        {
+          "code": 0,
+          "msg": "success",
+          "result": null
+        }
+      Sample 2:
+      {
+        "code": 400010,
+        "msg": "invalid password ",
+        "result": null
+      }
+      </p>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>

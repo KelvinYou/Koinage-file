@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Change password</title>
+    <link rel="stylesheet" href="changepwd.css">
+</head>
+<body>
+    <div class="">
+        <div class="language">
+            <h5>Language:English | Mandarin</h5>
+        </div>
+
+        <div class="second">
+            <div>
+                <img src="logo.png" alt="Koinagewallet">
+            </div>
+            <div>
+                <a class="ss2" href="security.html">SECURITY</a>
+                <a class="ss2" href="support.html">SUPPORT</a>
+                <a class="ss2" href="fordevelopers.html">FOR DEVELOPERS</a>
+            </div>
+            <div>
+                <a class="ss1" href="http://koinage.cc">LOGOUT</a>
+                <a class="ss1" href="http://koinage.cc/dashboard.php">WALLET</a>
+            </div>
+        </div>
+    </div>
+    <div id="container1">
+        <div id="container2">
+            <div>
+                <img src="lock.png" alt="">
+                <h2>Change Save Password</h2>
+            </div>
+
+            <label for="email"></label>
+            <input class="inpp" type="text" placeholder="Email" name="text" id="account" required><br>
+            
+            <label for="pwd"></label>
+            <input class="inpp" type="password" placeholder="Password" name="password" id="password" required><br>
+
+            <label for="safe_pwd"></label>
+            <input class="inpp" type="password" placeholder="Safe Password" name="password" id="safe_pwd" required><br>
+
+            <div class="last"> <br>
+                <button type="submit" class="changebtn" onclick="Change()">Change</button><br><br>
+                <button type="button" class="cancelbtn" onclick="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="end">
+        <img src="symbols.png" alt="symbols" class="symbols">
+    </div>
+    <div class="end2">
+        <h5>Copyright Ⓡ 2019 Koinage.com All rights reserved.</h5>
+    </div>
+
+    <script>
+        function Change() {
+            var xhttp = new XMLHttpRequest();
+            var email = document.getElementById("account").value;
+            var pwd = document.getElementById("password").value;
+            var safe_pwd = document.getElementById("safe_pwd").value;
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var resp=JSON.parse(this.responseText);
+                    if (resp.msg == "success") {
+                    alert("SUCCESS!");
+                    window.location="setting.html";
+                    }else if (resp.msg != "success") {
+                    alert("failed");
+                    }
+                }
+                
+            }
+            xhttp.open("POST", "http://1.32.63.61:8491/api/v1/account/updateSafePwd" , true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("account="+email+"&pwd="+pwd+"&safe_pwd="+safe_pwd);
+        }
+
+        function cancel() {
+            window.location="setting.html";
+        }
+    </script>
+</body>
+
+
+</html>

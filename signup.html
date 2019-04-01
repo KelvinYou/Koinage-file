@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+    <div class="heading">
+        <div class="language"><h5>Language: English丨Mandarin</h5></div>
+        <div class="second">
+            <div>
+                <img src="logo.png" alt="logo">
+            </div>
+            <div>
+                <a href="" class="signup">Sign Up</a>
+                <a href="http://koinage.cc/" class="login">Login</a>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function signup(){
+      event.preventDefault();
+      var email = document.getElementById("b").value;
+      var code = document.getElementById("c").value;
+      var pass = document.getElementById("d").value;
+      var alt = document.getElementById("e").value;
+      var nick = document.getElementById("f").value;
+      $(document).ready(function(){
+    
+        $.post("http://1.32.63.61:8491/api/v1/register",
+         {email: email, emailCode: code, pwd: pass, safe_pwd: alt, nickname: nick },
+          function(data,status){
+           //alert("Data: " + data.msg + data.code + "\nStatus: " + status);
+          if (data.msg=="success") {window.location="http://koinage.cc" ;}
+          else if (data.code=="40007") alert("Please Enter a Valid Email Address");
+          else if (data.code=="40002") alert("Please Enter a Valid Nickname");
+          else if (data.code=="40003") alert("Please enter a password that consists 8-16 characters (including numbers)");
+          else if (data.code=="40004") alert("Please enter an alternative password that consists 8-16 characters (including numbers)");
+          else if (data.code=="10001") alert("Your Email Address or Nickname has been used ");
+          });          
+      });
+     } 
+</script>
+<div id="container1">
+    <div id="container2">
+        <form class="con3">
+            <h1>Sign Up</h1><br>
+            <p>Please fill in this form to create an account.</p><br>
+            <hr>
+            <label for="email"></label>
+            <input class="inpp" type="text" placeholder="Enter Email" name="email" id="b" required><br>
+            <label for="email code"></label>
+            <input class="inpp" type="text" placeholder="Enter Email Code" name="emailCode" id="c" required><br>
+            <label for="psw"></label>
+            <input class="inpp" type="password" placeholder="Enter Password" name="pwd" id="d" required><br>
+            <label for="psw-repeat"></label>
+            <input class="inpp" type="password" placeholder="Enter an Alternative Password" name="safe_pwd" id="e" required><br>
+            <label for="nickname"></label>
+            <input class="inpp" type="text" placeholder="Enter Nickname" name="nickname" id="f" required><br>
+            <label><input type="checkbox" class="rm" checked="checked" name="remember" style="margin-bottom:15px">
+                By creating an account you agree to our <a href=""><b>Terms & Privacy</b></a>.
+            </label>
+            <div class="last">
+                <button type="submit" class="signupbtn" onclick="signup()">Sign Up</button>
+                <button type="button" class="cancelbtn"><a href="http://koinage.cc/">Cancel</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="end">
+    
+    <img src="symbols.png" alt="symbols" class="symbols">
+</div>
+<div class="end2">
+    <h5>Copyright Ⓡ 2019 Koinage.com All rights reserved.</h5>
+      
+</div>
+</body>
+</html>

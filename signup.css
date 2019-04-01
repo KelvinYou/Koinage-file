@@ -1,0 +1,128 @@
+* {margin: 0;padding: 0;}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.language {
+    background-color:rgb(38, 104, 36);
+    text-align:right;
+    color:white;
+    padding:4px;
+}
+.language h5 {
+    margin-right:100px;
+}
+.heading {
+    background-color:rgb(53, 172, 59);
+}
+.second {
+    list-style-type: none;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(53, 172, 59);
+    display:grid;
+    grid-template-columns: auto auto;
+}
+.second a {
+    float: right;
+    display: block;
+    color: white;
+    text-align:center;
+    padding: 8px;
+    text-decoration: none;
+    margin-top:35px;
+    margin-bottom: 15px;
+    border-radius:30px;
+    margin-right:55px;
+    width:80px;
+    border: 1px;
+    border-color: #f1f1f1;
+    border:1px solid white;
+}
+.second a:hover {
+    background-color: white;
+    color:rgb(53, 172, 59);
+}
+.second img {
+    width:325px;
+    position: relative;
+    left:9%;
+    padding:auto;
+}
+span.psw {
+    float: right;
+    padding: 10px 180px;
+    padding-top: 0px;
+}
+
+#container1 {
+    background-color:rgb(106, 211, 106);
+    padding:26px;
+}
+
+#container2 {
+    background-color:white;
+    width:300px;
+    height:550px;
+    border-radius:26px;
+    margin:auto;
+    text-align: center;
+    padding-top:40px;
+}
+.inpp {
+    border:1px solid rgb(245, 245, 155);
+    background-color: rgb(245, 245, 155);
+    border-radius:20px;
+    padding-top:6px;
+    padding-bottom:6px;
+    margin-top:23px;
+    width:180px;
+    padding-left:30px;
+    padding-right:30px;
+}
+.rm {
+    margin-top:30px;
+}
+.signupbtn {
+    padding:5px 47px;
+    color:white;
+    background-color: rgb(53, 172, 59);
+    border-radius:10px;
+    margin-top:30px;
+}
+.cancelbtn {
+    padding:5px 47px;
+    background-color: rgb(172, 2, 2);
+    margin-top:30px;
+    border-radius:10px;
+}
+.cancelbtn a {
+    text-decoration-line: none;
+    color:white;
+}
+.end {
+    background-color:rgb(53, 172, 59);
+    text-align: center;
+}
+.end img {
+    width:325px;
+    margin-top:90px;
+}
+.end2 {
+    background-color:rgb(38, 104, 36);
+    color:white;
+    margin-bottom:10px;
+}
+.end2 h5 {
+    margin-left:30px;
+    padding-top:16px;
+    padding-bottom:16px;
+}
+@media screen and (max-width:800px) {
+    .second {
+        grid-template-columns: auto;
+        text-align:center;
+    }
+}
